@@ -12,7 +12,7 @@ const firstDiv = document.querySelector('div'); // first "div" in the document
 
 // you give "querySelectorAll" a "css-style" string,
 // and it finds *all* elements that query would affect
-const paddles = document.querySelector('.paddle'); // array of both paddles
+const paddles = document.querySelectorAll('.paddle'); // array of both paddles
 `;
 
 export default js;
