@@ -1,24 +1,26 @@
 import React, { PureComponent } from 'react';
 import {
+  Appear,
   BlockQuote,
   Cite,
+  CodePane,
   Deck,
   Heading,
-  Quote,
-  Slide,
-  Text,
-  Appear,
+  Image,
   Layout,
-  CodePane,
+  Link,
   List,
   ListItem,
-  Link
+  Quote,
+  Slide,
+  Text
 } from 'spectacle';
 import createTheme from 'spectacle/lib/themes/default';
 import 'normalize.css';
 
 import htmlSnippet1 from './snippets/html1.js';
 import htmlSnippet2 from './snippets/html2.js';
+import htmlSnippet3 from './snippets/html3.js';
 
 import cssSnippet from './snippets/css.js';
 
@@ -28,6 +30,12 @@ import jsSnippet3 from './snippets/js3.js';
 import jsSnippet4 from './snippets/js4.js';
 import jsSnippet5 from './snippets/js5.js';
 import jsSnippet6 from './snippets/js6.js';
+
+import fundamentalsSnippet1 from './snippets/fundamentals1.js';
+import fundamentalsSnippet2 from './snippets/fundamentals2.js';
+import fundamentalsSnippet3 from './snippets/fundamentals3.js';
+
+import hovercat from './hovercat.gif';
 
 const theme = createTheme(
   {
@@ -57,6 +65,18 @@ export default class Presentation extends PureComponent {
           <Text textColor="tertiary" size={1} fit bold>
             workshop 01: html - styles - javascript
           </Text>
+        </Slide>
+
+        <Slide transition={['fade']} bgColor="primary">
+          <Text textColor="tertiary" size={1} fit bold>
+            workshop 01: html - styles - javascript
+          </Text>
+          <List>
+            <ListItem>Recap</ListItem>
+            <ListItem>Javascript Fundamentals</ListItem>
+            <ListItem>Get one of our paddle elements</ListItem>
+            <ListItem>Move it with a keystroke!</ListItem>
+          </List>
         </Slide>
 
         <Slide transition={['fade']} bgColor="tertiary">
@@ -182,7 +202,7 @@ export default class Presentation extends PureComponent {
               control
             </ListItem>
             <ListItem margin="1em">
-              <Link href="https://codesandbox.io/" bold>
+              <Link href="https://codesandbox.io/s/42lnn64oxw" bold>
                 Code Sandbox
               </Link>
               : Sublime Text for your browser, preconfigured with quality of
@@ -197,7 +217,68 @@ export default class Presentation extends PureComponent {
             Javascript
           </Heading>
           <Text textSize="1em" textColor="quartenary">
-            You may get <strong>elements</strong> in the html / document.
+            Include it with a script tag, <strong>inside it</strong> or
+            referencing a <strong>src</strong>
+          </Text>
+          <CodePane textSize="0.45em" lang="markup" source={htmlSnippet3} />
+        </Slide>
+
+        <Slide transition={['fade']} bgColor="primary">
+          <Heading size={6} textColor="tertiary" caps>
+            Javascript
+          </Heading>
+          <Text textSize="1em" textColor="quartenary">
+            You may declare <strong>variables</strong>
+          </Text>
+          <CodePane
+            textSize="0.8em"
+            lang="javascript"
+            source={fundamentalsSnippet1}
+          />
+        </Slide>
+
+        <Slide transition={['fade']} bgColor="primary">
+          <Heading size={6} textColor="tertiary" caps>
+            Javascript
+          </Heading>
+          <Text textSize="1em" textColor="quartenary">
+            <strong>Strings</strong>, <strong>Numbers</strong> and{' '}
+            <strong>Arrays</strong>
+          </Text>
+          <CodePane
+            textSize="0.6em"
+            lang="javascript"
+            source={fundamentalsSnippet2}
+          />
+        </Slide>
+
+        <Slide transition={['fade']} bgColor="primary">
+          <Heading size={6} textColor="tertiary" caps>
+            Javascript
+          </Heading>
+          <Text textSize="1em" textColor="quartenary">
+            <strong>Objects</strong> and <strong>Functions</strong>
+          </Text>
+          <CodePane
+            textSize="0.6em"
+            lang="javascript"
+            source={fundamentalsSnippet3}
+          />
+        </Slide>
+
+        <Slide transition={['fade']} bgColor="tertiary">
+          <Heading size={6} textColor="primary" caps>
+            Cat Interlude
+          </Heading>
+          <Image src={hovercat} />
+        </Slide>
+
+        <Slide transition={['fade']} bgColor="primary">
+          <Heading size={6} textColor="tertiary" caps>
+            Javascript
+          </Heading>
+          <Text textSize="1em" textColor="quartenary">
+            You may get <strong>elements</strong> in the html / document
           </Text>
           <CodePane textSize="0.6em" lang="javascript" source={jsSnippet3} />
         </Slide>
@@ -207,9 +288,9 @@ export default class Presentation extends PureComponent {
             Javascript
           </Heading>
           <Text textSize="1em" textColor="quartenary">
-            You may <strong>listen</strong> for keystrokes.
+            You may <strong>listen</strong> for keystrokes
           </Text>
-          <CodePane textSize="0.6em" lang="javascript" source={jsSnippet4} />
+          <CodePane textSize="0.8em" lang="javascript" source={jsSnippet4} />
           <div>
             <Appear>
               <div>
@@ -230,7 +311,7 @@ export default class Presentation extends PureComponent {
             Javascript
           </Heading>
           <Text textSize="1em" textColor="quartenary">
-            Handle specific keystrokes with an <strong>conditional</strong>
+            Handle specific keystrokes with a <strong>conditional</strong>
           </Text>
           <CodePane textSize="0.6em" lang="javascript" source={jsSnippet5} />
         </Slide>
